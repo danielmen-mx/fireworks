@@ -1,6 +1,24 @@
 <template>
-  <v-card class="ma-2 pa-2 elevation-5 text-center">
-    <v-btn><v-icon>mdi-home</v-icon></v-btn>
-    <span class="text-h6">Starting project</span>
+  <v-card>
+    <v-layout>
+      <Navigation />
+      <v-main >
+        <div class="pa-1" style="min-height: 86vh">
+          <router-view />
+        </div>
+        <Footer />
+      </v-main>
+    </v-layout>
   </v-card>
 </template>
+<script>
+import Navigation from '@/components/Layout/Navigation.vue'
+import Footer from '@/components/Layout/Footer.vue'
+
+export default {
+  components:{
+    Navigation,
+    Footer
+  }
+}
+</script>
