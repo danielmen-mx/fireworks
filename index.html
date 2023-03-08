@@ -12,3 +12,15 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+<script>
+  let previousTitle = document.title
+
+  window.addEventListener('blur', () => {
+    previousTitle = document.title
+    document.title = 'No te vayas aún!'
+  })
+
+  window.addEventListener('focus', () => {
+    document.title = previousTitle
+  })
+</script>
