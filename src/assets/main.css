@@ -55,3 +55,7 @@ a,
 .cursor-pointer {
   cursor: pointer !important;
 }
+
+.custom-container {
+  padding: 16px, 24px;
+}
