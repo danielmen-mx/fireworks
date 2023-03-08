@@ -18,7 +18,8 @@
           variant="text"
           class="mx-2"
           rounded="xl"
-        >{{ link }}
+          :to="link.path"
+        >{{ link.title }}
         </v-btn>
     </template>
   </v-app-bar>
@@ -28,13 +29,42 @@ export default {
   data() {
     return {
       links: [
-        'Inicio',
-        'Quienes Somos',
-        'Servicios',
-        'FAQs',
-        'Contáctanos',
-        'Enviar msj a WhatsApp'
+        {
+          title: 'Inicio',
+          path: '/',
+          name: 'home'
+        },
+        {
+          title: 'Quienes Somos',
+          path: '/quienes-somos',
+          name: 'about'
+        },
+        {
+          title: 'Servicios',
+          path: '/servicios',
+          name: 'services'
+        },
+        {
+          title: 'FAQs',
+          path: '/preguntas',
+          name: 'asks',
+        },
+        {
+          title: 'Contáctanos',
+          path: '/contacto',
+          name: 'contact',
+        },
+        {
+          title: 'Enviar msj a WhatsApp',
+          path: '/',
+          name: 'none'
+        }
       ]
+    }
+  },
+  methods: {
+    pushRoute(route) {
+      this.$router.push({ path: route})
     }
   },
 }
