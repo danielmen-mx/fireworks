@@ -11,6 +11,7 @@
       </v-btn>
     </v-card-item>
   </v-card-text>
+  <v-divider></v-divider>
 </template>
 <script>
 export default {

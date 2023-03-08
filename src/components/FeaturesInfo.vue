@@ -6,6 +6,7 @@
     <v-card-text class="pa-0 text-h6">{{info.title}}</v-card-text>
     <v-card-text class="text--primary pa-0">{{info.info}}</v-card-text>
   </v-card-item>
+  <v-divider></v-divider>
 </template>
 <script>
 export default {
