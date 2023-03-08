@@ -1,5 +1,5 @@
 <template>
-  <v-card-text class="text-h5">Caracteristicas:</v-card-text>
+  <v-card-text class="text-h6">Caracteristicas:</v-card-text>
   <v-card-item
     v-for="info in information"
   >
