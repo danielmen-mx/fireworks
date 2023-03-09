@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     FAQs!
-  </div>
+  </v-container>
 </template>

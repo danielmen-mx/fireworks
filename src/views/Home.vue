@@ -16,16 +16,15 @@
         <MainContact />
       </v-col>
     </v-row>
-    <v-divider></v-divider>
   </v-container>
 </template>
 <script>
-import MainImage from "@/components/MainImage.vue"
-import FeaturesInfo from "@/components/FeaturesInfo.vue"
+import MainImage from "@/components/Home/MainImage.vue"
+import FeaturesInfo from "@/components/Home/FeaturesInfo.vue"
 
-import MainInfo from "@/components/MainInfo.vue"
-import Prices from "@/components/Prices.vue"
-import MainContact from "@/components/MainContact.vue"
+import MainInfo from "@/components/Home/MainInfo.vue"
+import Prices from "@/components/Home/Prices.vue"
+import MainContact from "@/components/Home/MainContact.vue"
 
 export default {
   components: {

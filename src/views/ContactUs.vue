@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     Contact Us!
-  </div>
+  </v-container>
 </template>

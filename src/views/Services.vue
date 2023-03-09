@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     Our Services!
-  </div>
+  </v-container>
 </template>
