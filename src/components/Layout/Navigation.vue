@@ -44,11 +44,11 @@ export default {
           path: '/servicios',
           name: 'services'
         },
-        {
-          title: 'FAQs',
-          path: '/preguntas',
-          name: 'asks',
-        },
+        // {
+        //   title: 'FAQs',
+        //   path: '/preguntas',
+        //   name: 'asks',
+        // },
         {
           title: 'Contáctanos',
           path: '/contacto',
