@@ -6,42 +6,60 @@
       <v-btn
         class="rounded-pill elevation-2 ma-1 px-4"
         :color="button.color"
+        @click="action(button)"
       >
         <v-icon>{{button.icon}}</v-icon>
-        {{button.title}}
+        <span>{{button.title}}</span>
       </v-btn>
     </v-card-item>
   </v-card-text>
   <v-divider></v-divider>
+  <Dialog :open_form="dialog" @close-form="closeDialog"/>
 </template>
 <script>
+import Dialog from '@/components/Home/Dialog.vue'
 export default {
+  components: {
+    Dialog
+  },
   data() {
     return {
       buttons: [
         {
           title: "Llamar por teléfono",
+          name: "phone",
           icon: "mdi-cellphone",
           color: "#FFA726",
           action: ""
         },
         {
           title: "Enviar msj a WhatsApp",
+          name: "whats",
           icon: "mdi-whatsapp",
           color: "#26A69A",
-          action: ""
+          action: "https://wa.me/message/WZQZJUBNRUFYF1"
         },
         {
           title: "Enviar e-mail",
+          name: "email",
           icon: "mdi-email",
           color: "#2196F3",
           action: ""
         }
-      ]
+      ],
+      dialog: false
     }
   },
   methods: {
-    // add method when click button: contact by phonecall, whatsapp, email
+    action(data) {
+      if (data.name == 'whats') window.location = data.action
+      if (data.name == 'email') {
+        this.dialog = true
+      }
+    },
+    closeDialog() {
+      this.dialog = false
+    }
   },
 }
 </script>

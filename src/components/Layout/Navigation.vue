@@ -18,7 +18,7 @@
           variant="text"
           class="mx-2"
           rounded="xl"
-          :to="link.path"
+          @click="pushRoute(link)"
         >{{ link.title }}
         </v-btn>
     </template>
@@ -52,19 +52,20 @@ export default {
         {
           title: 'Contáctanos',
           path: '/contacto',
-          name: 'contact',
+          name: 'contact'
         },
         {
           title: 'Enviar msj a WhatsApp',
-          path: '/',
-          name: 'none'
+          path: "https://wa.me/message/WZQZJUBNRUFYF1",
+          name: 'whats'
         }
       ]
     }
   },
   methods: {
-    pushRoute(route) {
-      this.$router.push({ path: route})
+    pushRoute(link) {
+      if (link.name != 'whats') this.$router.push({ path: link.path})
+      if (link.name == 'whats') window.location = link.path
     }
   },
 }

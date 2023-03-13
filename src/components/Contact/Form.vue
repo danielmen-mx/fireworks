@@ -1,6 +1,6 @@
 
 <template>
-  <v-card class="pa-4 ma-4">
+  <v-card class="pa-0 ma-3 elevation-0">
     <v-form
       v-model="form_complete"
       @submit.prevent
@@ -73,7 +73,6 @@
         :disabled="!form_complete"
         :loading="loading"
         type="submit"
-        class="me-4"
         color="success"
         @click="submit"
       >

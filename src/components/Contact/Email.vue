@@ -11,8 +11,10 @@
           <p class="text-subtitle-1 mx-16 px-16">Envienos un mensaje de correo electrónico si tienes alguna pregunta o deseas cotizar tu evento, nosotros nos comunicaremos en breve</p>
         </v-col>
         <v-col>
-          <p class="text-subtitle-2 text-left mx-16">Tu mensaje será enviado a example@hotmail.com, o si gustas puedes usar la dirección desde tu app</p>
-          <Form />
+          <v-card class="pa-2">
+            <p class="text-subtitle-2 text-left mx-16">Tu mensaje será enviado a example@hotmail.com, o si gustas puedes usar la dirección desde tu app</p>
+            <Form />
+          </v-card>
         </v-col>
       </v-row>
     </div>
