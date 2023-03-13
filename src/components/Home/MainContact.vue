@@ -47,7 +47,8 @@ export default {
           action: ""
         }
       ],
-      dialog: false
+      dialog: false,
+      message: "Pongase en contacto al (+52)961-297-8513"
     }
   },
   methods: {
@@ -55,6 +56,9 @@ export default {
       if (data.name == 'whats') window.location = data.action
       if (data.name == 'email') {
         this.dialog = true
+      }
+      if (data.name == 'phone') {
+        this.emitter.emit('openDialog', {message: this.message})
       }
     },
     closeDialog() {
