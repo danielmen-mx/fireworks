@@ -16,6 +16,7 @@
           variant="plain"
           size="small"
           :icon="icon.icon"
+          @click="action(icon)"
         ></v-btn>
       </template>
     </v-tooltip>
@@ -42,17 +43,27 @@
       icons: [
         {
           icon: 'mdi-facebook',
-          text: 'Click to redirect'
+          text: 'Click to redirect',
+          url: 'https://www.facebook.com/profile.php?id=100089471205980'
         },
         {
           icon: 'mdi-twitter',
-          text: 'Proximamente...'
+          text: 'Proximamente...',
+          url: null
         },
         {
           icon: 'mdi-instagram',
-          text: 'Proximamente...'
+          text: 'Proximamente...',
+          url: null
         }
       ],
-    }),
+  }),
+    methods: {
+      action(data) {
+        if (!data.text.includes('Proximamente')) {
+          window.location = data.url
+        }
+      }
+    },
   }
 </script>
