@@ -14,6 +14,10 @@ import * as directives from 'vuetify/directives'
 import VuePhoneNumberInput from 'vue-phone-number-input'
 import 'vue-phone-number-input/dist/vue-phone-number-input.css'
 
+import mitt from 'mitt'
+
+const emitter = mitt()
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -24,6 +28,8 @@ const app = createApp(App)
 app.config.compilerOptions.isCustomElement = (tag) => tag.includes('-')
 
 app.component('vue-phone-number-input', VuePhoneNumberInput)
+
+app.config.globalProperties.emitter = emitter
 
 app.use(router)
    .use(vuetify)
