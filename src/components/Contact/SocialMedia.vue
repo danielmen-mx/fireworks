@@ -16,12 +16,15 @@
 export default {
   data () {
     return {
-      message: "Pongase en contacto al (+52)961-297-8513"
+      message: "Pongase en contacto al (+52)",
+      phone: "961-297-8513"
     }
   },
   methods: {
     callUs() {
-      this.emitter.emit('openDialog', {message: this.message})
+      this.emitter.emit('openDialog', { message: this.message + this.phone })
+      navigator.clipboard.writeText(this.phone)
+      this.emitter.emit('snackbarNotify', {message: "Número telefónico copiado al portapapeles", color: "success"})
     },
     redirectWA() {
       console.log('redirecting...')

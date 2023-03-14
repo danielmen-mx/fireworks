@@ -12,7 +12,7 @@
         </v-col>
         <v-col>
           <v-card class="pa-2">
-            <p class="text-subtitle-2 text-left mx-16">Tu mensaje será enviado a example@hotmail.com, o si gustas puedes usar la dirección desde tu app</p>
+            <p class="text-subtitle-2 text-left mx-6">Tu mensaje será enviado a <button @click="copyClipboard()">{{ email }}</button>, o si gustas puedes usar la dirección desde tu app</p>
             <Form />
           </v-card>
         </v-col>
@@ -26,6 +26,21 @@ import Form from '@/components/Contact/Form.vue'
 export default {
   components: {
     Form
-  }
+  },
+  data() {
+    return {
+      email: "momentosmagicoss23@outlook.com",
+      snackbar: {
+        message: 'Correo copiado al portapapeles',
+        color: 'success'
+      }
+    }
+  },
+  methods: {
+    copyClipboard() {
+      navigator.clipboard.writeText(this.email)
+      this.emitter.emit('snackbarNotify', this.snackbar)
+    }
+  },
 }
 </script>

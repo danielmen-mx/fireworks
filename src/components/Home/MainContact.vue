@@ -48,7 +48,8 @@ export default {
         }
       ],
       dialog: false,
-      message: "Pongase en contacto al (+52)961-297-8513"
+      message: "Pongase en contacto al (+52)",
+      phone: "961-297-8513"
     }
   },
   methods: {
@@ -58,7 +59,9 @@ export default {
         this.dialog = true
       }
       if (data.name == 'phone') {
-        this.emitter.emit('openDialog', {message: this.message})
+        this.emitter.emit('openDialog', { message: this.message + this.phone })
+        navigator.clipboard.writeText(this.phone)
+        this.emitter.emit('snackbarNotify', {message: "Número telefónico copiado al portapapeles", color: "success"})
       }
     },
     closeDialog() {
