@@ -1,8 +1,9 @@
 <template>
   <v-card class="pa-0 ma-3 elevation-0">
-    <v-form
-      v-model="form_complete"
+    <form
+      ref="form"
       @submit.prevent
+      @mouseover="checkForm()"
     >
       <v-row>
         <v-col
@@ -11,6 +12,8 @@
         >
           <v-text-field
             v-model="form.name"
+            name="name"
+            clearable
             :readonly="loading"
             :rules="[rules.required]"
             label="Nombre"
@@ -23,6 +26,7 @@
           <!-- <VuePhoneNumberInput v-model="form.phone" /> -->
           <v-text-field
             v-model="form.phone"
+            name="phone"
             :readonly="loading"
             :rules="[rules.required, rules.numberRule]"
             clearable
@@ -34,6 +38,7 @@
 
       <v-text-field
         v-model="form.email"
+        name="email"
         :readonly="loading"
         :rules="[rules.required, rules.email]"
         label="Email"
@@ -47,6 +52,7 @@
         >
           <v-text-field
             v-model="form.state"
+            name="state"
             :readonly="loading"
             :rules="[rules.required]"
             clearable
@@ -59,6 +65,7 @@
         >
           <v-text-field
             v-model="form.date"
+            name="date"
             :readonly="loading"
             :rules="[rules.required]"
             type="date"
@@ -69,7 +76,7 @@
       </v-row>
 
       <v-btn
-        :disabled="!form_complete"
+        :disabled="!formComplete"
         :loading="loading"
         type="submit"
         color="success"
@@ -78,27 +85,35 @@
         <v-icon icon="mdi-send" start></v-icon>
         enviar
       </v-btn>
-    </v-form>
+    </form>
   </v-card>
 </template>
 <script>
+import emailjs from 'emailjs-com'
+import {ref} from 'vue'
+// import emailjs from '@emailjs/browser'
+
 export default {
   data() {
     return {
       loading: false,
-      form_complete: false,
+      formComplete: false,
       form: {
         name: null,
         phone: null,
         email: null,
         state: null,
-        date: null,
+        date: null
+      },
+      snackbar: {
+        message: 'Correo enviado con éxito',
+        color: 'success'
       },
       rules: {
         required: value => !!value || 'Campo requerido',
         email: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
+          return pattern.test(value) || 'Correo no válido.'
         },
         numberRule: value  => {
           if (!value.trim()) return true;
@@ -110,18 +125,32 @@ export default {
   },
   methods: {
     async submit() {
-      console.log('el formulario es:', this.form)
       try {
         this.loading = true
 
-        // const resp = await axios.post('', this.form) // test request
+        let serviceId = import.meta.env.VITE_SERVICE_ID
+        let templateId = import.meta.env.VITE_TEMPLATE_ID
+        let userId = import.meta.env.VITE_USER_ID
 
+        emailjs.sendForm(serviceId, templateId, this.$refs.form, userId).then(() => {
+          this.emitter.emit('snackbarNotify', this.snackbar)
+          this.form = {}
+          this.loading = false
+          this.emitter.emit('closeDialog')
+        })
       } catch (error) {
         console.log(error)
+        this.emitter.emit('snackbarNotify', {message: error, color: 'red'})
       }
-
-      this.loading = false
     },
+    checkForm() {
+      if (this.form.name && this.form.phone && this.form.email && this.form.state && this.form.date) {
+        this.formComplete = true
+      }
+    }
   },
+  watch: {
+    
+  }
 }
 </script>

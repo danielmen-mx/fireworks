@@ -68,5 +68,10 @@ export default {
       this.dialog = false
     }
   },
+  mounted() {
+    this.emitter.on('closeDialog', (data) => {
+      this.closeDialog()
+    })
+  },
 }
 </script>
