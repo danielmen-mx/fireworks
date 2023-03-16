@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/webunder/repositories/fireworks
+    - export DEPLOYPATH=/home3/webunder/public_html
     - /bin/cp -R images $DEPLOYPATH
