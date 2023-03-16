@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper-c27b6911.js";import{r as t,o as n,c,w as r,e as s}from"./index-e84e3e4b.js";const a={};function _(f,i){const e=t("v-container");return n(),c(e,null,{default:r(()=>[s(" FAQs! ")]),_:1})}const p=o(a,[["render",_]]);export{p as default};
