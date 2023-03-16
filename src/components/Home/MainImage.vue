@@ -4,7 +4,7 @@
     color="deep-orange-lighten-4"
   >
     <v-img
-      src="/public/logos/main-logo.png"
+      src="/logos/main-logo.png"
       height="400px"
       cover
     >
