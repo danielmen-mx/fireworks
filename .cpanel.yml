@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home3/webunder/public_html
+    - export DEPLOYPATH=/home3/webunder/public_html/momentos-magicos
     - /bin/cp -R images $DEPLOYPATH
