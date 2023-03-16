@@ -1,6 +1,6 @@
 <template>
   <v-card-text>
-    <p class="text-h4 text--primary font-weight-bold text-grey-darken-3">Show animado para Baby Shower, Fiestas de Cumpleaños y más</p>
+    <p class="text-h4 text--primary font-weight-bold text-grey-darken-3">Show animado para Baby Shower, Fiestas de Cumpleaños y más, actualizando</p>
   </v-card-text>
   <v-divider></v-divider>
   <v-card-text class="py-4 px-6">
