@@ -2,7 +2,7 @@
 npm run build
 
 # add dist folder
-git add .dist
+git add -A
 git commit -m "deploy production"
 
 # push changes
