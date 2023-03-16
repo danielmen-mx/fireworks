@@ -13,7 +13,7 @@
         :key="n"
       >
         <v-parallax
-          :src="`/public/events_photos/${n}.jpeg`"
+          :src="`/events_photos/${n}.jpeg`"
           height="800"
         >
         </v-parallax>

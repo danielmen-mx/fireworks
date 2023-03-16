@@ -1,6 +1,6 @@
 <template>
   <v-container class="text-center text-h4 text-grey-darken-3">
-    <v-img src="/public/images/message.png" width="110px" class="mx-auto"></v-img>
+    <v-img src="/images/message.png" width="110px" class="mx-auto"></v-img>
     <div class="text-h5 my-6">
       <p class="font-weight-bold">Personaliza tu experiencia agendando una cita</p>
       <p>No lo pienses más, contactanos de inmediato</p>

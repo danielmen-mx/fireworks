@@ -7,7 +7,7 @@
         </div>
       </v-col>
       <v-col>
-        <v-img src="/public/images/caller.png" width="60vw"></v-img>
+        <v-img src="/images/caller.png" width="60vw"></v-img>
       </v-col>
     </v-row>
   </div>

@@ -46,25 +46,25 @@ export default {
         {
           title: "Fiesta infantil",
           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea consequuntur quae assumenda in nobis ducimus quas quis vitae placeat accusantium aut, neque cumque. Pariatur nisi delectus qui consectetur dicta!",
-          image: "/public/events_photos/4.jpeg",
+          image: "/events_photos/4.jpeg",
           side: "right"
         },
         {
           title: "Baby Shower",
           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea consequuntur quae assumenda in nobis ducimus quas quis vitae placeat accusantium aut, neque cumque. Pariatur nisi delectus qui consectetur dicta!",
-          image: "/public/events_photos/8.jpeg",
+          image: "/events_photos/8.jpeg",
           side: "left"
         },
         {
           title: "Despedida de soltera",
           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea consequuntur quae assumenda in nobis ducimus quas quis vitae placeat accusantium aut, neque cumque. Pariatur nisi delectus qui consectetur dicta!",
-          image: "/public/events_photos/12.jpeg",
+          image: "/events_photos/12.jpeg",
           side: "right"
         },
         {
           title: "Show adolescentes/adultos",
           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ea consequuntur quae assumenda in nobis ducimus quas quis vitae placeat accusantium aut, neque cumque. Pariatur nisi delectus qui consectetur dicta!",
-          image: "/public/events_photos/16.jpeg",
+          image: "/events_photos/16.jpeg",
           side: "left"
         },
       ]

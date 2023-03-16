@@ -5,7 +5,7 @@
   >
     <template v-slot:prepend>
       <v-img
-        src="/public/logos/main-logo.png"
+        src="/logos/main-logo.png"
         class="ml-2 mt-1"
         width="150px"
       ></v-img>
